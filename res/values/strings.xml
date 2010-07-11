@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright (C) 2010 Manuel Luitz
+-->
+<!--
+	This file is part of AndroHid. This program is free software; you can
+	redistribute it and/or modify it under the terms of the GNU General
+	Public License as published by the Free Software Foundation; either
+	version 3 of the License, or (at your option) any later version.
+-->
+<!--
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	General Public License for more details. You should have received a
+	copy of the GNU General Public License along with this program; If
+	not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+<string name="app_name">androhid</string>
+<string name="menu_button_connect">Connect</string>
+<string name="menu_button_disconnect">Disconnect</string>
+<string name="menu_button_info">Information</string>
+<string name="menu_button_search_device">Search Device</string>
+<string name="menu_button_settings">Preferences</string>
+<string name="connection_message">Connecting to HID Server...</string>
+<string name="bt_device_search_list">Reachable Bluetooth Devices</string>
+<string name="no_devices">No devices found!</string>
+<string name="enable_bluetooth">This application needs Bluetooth.\nEnable it now?</string>
+<string name="yes">yes</string>
+<string name="no">no</string>
+<string name="option_menu_scan_devices_button">Search remote Devices</string>
+<string name="bluetooth_not_enabled">Bluetooth not enabled!</string>
+<string name="device_picker_title">AndroHid - Search Devices</string>
+<string name="copyright_dialog_title">AndroHid</string>
+<string name="copyright_dialog">AndroHid is a free implementation of the bluetooth 
+								Human Interface Device specification.
+								Use your android device as a remote bluetooth keyboard.
+								\n
+								\nCopyright (C) 2010 Manuel Luitz (manuel.luitz@gmail.com)
+								\n
+								\nAndroHid is free software. You can redistribute it and/or 
+								modify it under the terms of the GNU General Public License as 
+								published by the Free Software Foundation either version 3 of the License, 
+								or (at your option) any later version.
+								</string>
+
+<!--preference strings-->
+<string name="preferences_title">AndroHid - Settings</string>
+
+<string name="settings_stay_screen_on">keep screen on</string>
+<string name="settings_stay_screen_on_title">Keep screen on</string>
+<string name="settings_stay_screen_on_summary">Screen stays illuminated while app is running</string>
+<string name="settings_display">Display Settings</string>
+<string name="settings_rotate_screen_title">No screen rotation</string>
+<string name="settings_rotate_screen_summary">prevent screen from rotation</string>
+<string name="settings_track_ball_usage">Track ball usage</string>
+<string name="settings_enable_track_ball_title">Enable track ball</string>
+<string name="settings_enable_track_ball_summary">Use the track ball in the application </string>
+<string name="settings_map_track_ball_title">Map track ball</string>
+<string name="settings_map_track_ball_summary">Map the track ball to keyboard events</string>
+
+<string name="settings_key_mapping">Mapping</string>
+<string name="settings_tab_player">Player tab mapping</string>
+<string name="settings_tab_video">Video tab mapping</string>
+<string name="settings_tab_presenter">Presenter tab mapping</string>
+<string name="settings_keycode">Keycode</string>
+<string name="settings_keycode_summary">Enter a keycode to be mapped</string>
+<string name="settings_modifier">Modifier</string>
+<string name="settings_modifier_summary">Enter a modifier to be mapped</string>
+
+<string name="settings_tab_player_button_1">Button 1</string>
+<string name="settings_tab_player_button_2">Button 2</string>
+<string name="settings_tab_player_button_3">Button 3</string>
+<string name="settings_tab_player_button_4">Button 4</string>
+<string name="settings_tab_player_button_5">Button 5</string>
+<string name="settings_tab_player_button_6">Button 6</string>
+<string name="settings_tab_player_button_7">Button 7</string>
+<string name="settings_tab_player_button_8">Button 8</string>
+<string name="settings_tab_player_button_9">Button 9</string>
+<string name="settings_tab_player_button_10">Button 10</string>
+<string name="settings_tab_player_button_11">Button 11</string>
+<string name="settings_tab_player_button_12">Button 12</string>
+
+<string name="settings_tab_video_button_1">Button 1</string>
+<string name="settings_tab_video_button_2">Button 2</string>
+<string name="settings_tab_video_button_3">Button 3</string>
+<string name="settings_tab_video_button_4">Button 4</string>
+<string name="settings_tab_video_button_5">Button 5</string>
+<string name="settings_tab_video_button_6">Button 6</string>
+<string name="settings_tab_video_button_7">Button 7</string>
+<string name="settings_tab_video_button_8">Button 8</string>
+<string name="settings_tab_video_button_9">Button 9</string>
+<string name="settings_tab_video_button_10">Button 10</string>
+<string name="settings_tab_video_button_11">Button 11</string>
+<string name="settings_tab_video_button_12">Button 12</string>
+
+<string name="settings_tab_presenter_button_1">Button 1</string>
+<string name="settings_tab_presenter_button_2">Button 2</string>
+<string name="settings_tab_presenter_button_3">Button 3</string>
+<string name="settings_tab_presenter_button_4">Button 4</string>
+<string name="settings_tab_presenter_button_5">Button 5</string>
+<string name="settings_tab_presenter_button_6">Button 6</string>
+<string name="settings_tab_presenter_button_7">Button 7</string>
+<string name="settings_tab_presenter_button_8">Button 8</string>
+<string name="settings_tab_presenter_button_9">Button 9</string>
+<string name="settings_tab_presenter_button_10">Button 10</string>
+<string name="settings_tab_presenter_button_11">Button 11</string>
+<string name="settings_tab_presenter_button_12">Button 12</string>
+
+<!-- Default Mappings Player Tab -->
+<string name="tab_player_button_1_keycode_default">236</string>
+<string name="tab_player_button_1_modifier_default">0</string>
+<string name="tab_player_button_2_keycode_default">249</string>
+<string name="tab_player_button_2_modifier_default">0</string>
+<string name="tab_player_button_3_keycode_default">248</string>
+<string name="tab_player_button_3_modifier_default">0</string>
+<string name="tab_player_button_4_keycode_default">234</string>
+<string name="tab_player_button_4_modifier_default">0</string>
+<string name="tab_player_button_5_keycode_default">233</string>
+<string name="tab_player_button_5_modifier_default">0</string>
+<string name="tab_player_button_6_keycode_default">235</string>
+<string name="tab_player_button_6_modifier_default">0</string>
+<string name="tab_player_button_7_keycode_default">245</string>
+<string name="tab_player_button_7_modifier_default">0</string>
+<string name="tab_player_button_8_keycode_default">232</string>
+<string name="tab_player_button_8_modifier_default">0</string>
+<string name="tab_player_button_9_keycode_default">246</string>
+<string name="tab_player_button_9_modifier_default">0</string>
+<string name="tab_player_button_10_keycode_default">127</string>
+<string name="tab_player_button_10_modifier_default">0</string>
+<string name="tab_player_button_11_keycode_default">129</string>
+<string name="tab_player_button_11_modifier_default">0</string>
+<string name="tab_player_button_12_keycode_default">128</string>
+<string name="tab_player_button_12_modifier_default">0</string>
+
+<!-- Default Mappings Video Tab -->
+<string name="tab_video_button_1_keycode_default">0</string>
+<string name="tab_video_button_1_modifier_default">0</string>
+<string name="tab_video_button_2_keycode_default">9</string>
+<string name="tab_video_button_2_modifier_default">0</string>
+<string name="tab_video_button_3_keycode_default">0</string>
+<string name="tab_video_button_3_modifier_default">0</string>
+<string name="tab_video_button_4_keycode_default">78</string>
+<string name="tab_video_button_4_modifier_default">0</string>
+<string name="tab_video_button_5_keycode_default">20</string>
+<string name="tab_video_button_5_modifier_default">0</string>
+<string name="tab_video_button_6_keycode_default">75</string>
+<string name="tab_video_button_6_modifier_default">0</string>
+<string name="tab_video_button_7_keycode_default">80</string>
+<string name="tab_video_button_7_modifier_default">0</string>
+<string name="tab_video_button_8_keycode_default">44</string>
+<string name="tab_video_button_8_modifier_default">0</string>
+<string name="tab_video_button_9_keycode_default">79</string>
+<string name="tab_video_button_9_modifier_default">0</string>
+<string name="tab_video_button_10_keycode_default">127</string>
+<string name="tab_video_button_10_modifier_default">0</string>
+<string name="tab_video_button_11_keycode_default">129</string>
+<string name="tab_video_button_11_modifier_default">0</string>
+<string name="tab_video_button_12_keycode_default">128</string>
+<string name="tab_video_button_12_modifier_default">0</string>
+
+<!-- Default Mappings Presenter Tab -->
+<string name="tab_presenter_button_1_keycode_default">62</string>
+<string name="tab_presenter_button_1_modifier_default">0</string>
+<string name="tab_presenter_button_2_keycode_default">72</string>
+<string name="tab_presenter_button_2_modifier_default">0</string>
+<string name="tab_presenter_button_3_keycode_default">61</string>
+<string name="tab_presenter_button_3_modifier_default">4</string>
+<string name="tab_presenter_button_4_keycode_default">74</string>
+<string name="tab_presenter_button_4_modifier_default">0</string>
+<string name="tab_presenter_button_5_keycode_default">82</string>
+<string name="tab_presenter_button_5_modifier_default">0</string>
+<string name="tab_presenter_button_6_keycode_default">75</string>
+<string name="tab_presenter_button_6_modifier_default">0</string>
+<string name="tab_presenter_button_7_keycode_default">80</string>
+<string name="tab_presenter_button_7_modifier_default">0</string>
+<string name="tab_presenter_button_8_keycode_default">40</string>
+<string name="tab_presenter_button_8_modifier_default">0</string>
+<string name="tab_presenter_button_9_keycode_default">79</string>
+<string name="tab_presenter_button_9_modifier_default">0</string>
+<string name="tab_presenter_button_10_keycode_default">77</string>
+<string name="tab_presenter_button_10_modifier_default">0</string>
+<string name="tab_presenter_button_11_keycode_default">81</string>
+<string name="tab_presenter_button_11_modifier_default">0</string>
+<string name="tab_presenter_button_12_keycode_default">78</string>
+<string name="tab_presenter_button_12_modifier_default">0</string>
+
+</resources>

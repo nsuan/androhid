@@ -1,0 +1,745 @@
+<!--
+	Copyright (C) 2010 Manuel Luitz
+-->
+<!--
+	This file is part of AndroHid. This program is free software; you can
+	redistribute it and/or modify it under the terms of the GNU General
+	Public License as published by the Free Software Foundation; either
+	version 3 of the License, or (at your option) any later version.
+-->
+<!--
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	General Public License for more details. You should have received a
+	copy of the GNU General Public License along with this program; If
+	not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/preferences_title">
+    <PreferenceCategory android:title="@string/settings_display">
+        <CheckBoxPreference
+                android:key="@string/settings_stay_screen_on"
+                android:title="@string/settings_stay_screen_on_title"
+                android:summary="@string/settings_stay_screen_on_summary" />
+		<CheckBoxPreference
+                android:key="SETTINGS_ROTATE_SCREEN"
+                android:title="@string/settings_rotate_screen_title"
+                android:summary="@string/settings_rotate_screen_summary"
+                android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_track_ball_usage">
+    	<CheckBoxPreference 
+    			android:key="SETTINGS_ENABLE_TRACK_BALL"
+                android:title="@string/settings_enable_track_ball_title"
+                android:summary="@string/settings_enable_track_ball_summary"
+    	/> 	 
+        <CheckBoxPreference
+                android:key="SETTINGS_MAP_TRACK_BALL"
+                android:title="@string/settings_map_track_ball_title"
+                android:summary="@string/settings_map_track_ball_summary" 
+                android:dependency="SETTINGS_ENABLE_TRACK_BALL"/>
+    </PreferenceCategory>            
+        
+    <PreferenceCategory android:title="@string/settings_key_mapping">
+	    <PreferenceScreen android:title="@string/settings_tab_player">
+	    
+	    	<PreferenceScreen android:title="@string/settings_tab_player_button_1">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_1_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_1_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_1_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_1_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_2">		
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_2_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_2_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_2_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_2_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_3">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_3_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_3_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_3_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_3_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_4">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_4_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_4_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_4_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_4_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_5">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_5_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_5_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_5_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_5_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_6">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_6_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_6_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_6_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_6_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_7">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_7_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_7_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_7_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_7_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_8">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_8_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_8_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_8_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_8_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_9">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_9_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_9_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_9_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_9_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_10">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_10_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_10_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_10_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_10_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_11">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_11_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_11_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_11_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_11_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_player_button_12">	
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_12_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_player_button_12_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PLAYER_BUTTON_12_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_player_button_12_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+		</PreferenceScreen>
+		
+		
+		<PreferenceScreen android:title="@string/settings_tab_video">
+	    
+	    	<PreferenceScreen android:title="@string/settings_tab_video_button_1">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_1_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_1_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_1_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_1_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_2">		
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_2_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_2_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_2_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_2_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_3">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_3_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_3_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_3_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_3_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_4">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_4_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_4_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_4_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_4_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_5">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_5_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_5_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_5_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_5_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_6">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_6_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_6_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_6_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_6_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_7">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_7_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_7_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_7_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_7_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_8">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_8_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_8_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_8_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_8_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_9">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_9_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_9_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_9_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_9_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_10">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_10_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_10_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_10_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_10_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_11">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_11_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_11_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_11_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_11_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_video_button_12">	
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_12_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_video_button_12_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_VIDEO_BUTTON_12_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_video_button_12_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+		</PreferenceScreen>
+		
+<!-- Presenter Mapping Section -->
+		<PreferenceScreen android:title="@string/settings_tab_presenter">
+	    
+	    	<PreferenceScreen android:title="@string/settings_tab_presenter_button_1">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_1_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_1_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_1_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_1_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_2">		
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_2_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_2_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_2_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_2_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_3">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_3_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_3_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_3_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_3_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_4">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_4_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_4_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_4_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_4_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_5">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_5_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_5_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_5_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_5_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_6">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_6_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_6_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_6_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_6_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_7">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_7_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_7_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_7_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_7_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_8">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_8_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_8_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_8_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_8_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_9">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_9_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_9_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_9_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_9_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_10">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_10_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_10_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_10_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_10_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_11">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_11_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_11_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_11_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_11_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+			<PreferenceScreen android:title="@string/settings_tab_presenter_button_12">	
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_12_KEYCODE"
+					android:title="@string/settings_keycode" 
+					android:dialogTitle="@string/settings_keycode"
+					android:summary="@string/settings_keycode_summary"
+					android:defaultValue="@string/tab_presenter_button_12_keycode_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+				<EditTextPreference android:key="SETTINGS_TAB_PRESENTER_BUTTON_12_MODIFIER"
+					android:title="@string/settings_modifier" 
+					android:dialogTitle="@string/settings_modifier"
+					android:summary="@string/settings_modifier_summary"
+					android:defaultValue="@string/tab_presenter_button_12_modifier_default"
+					android:inputType="number"
+					android:maxLength="6"
+				/>
+			</PreferenceScreen>
+			
+		</PreferenceScreen>
+		
+    </PreferenceCategory>
+</PreferenceScreen>

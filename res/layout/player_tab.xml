@@ -1,0 +1,136 @@
+<!--
+	Copyright (C) 2010 Manuel Luitz
+-->
+<!--
+	This file is part of AndroHid. This program is free software; you can
+	redistribute it and/or modify it under the terms of the GNU General
+	Public License as published by the Free Software Foundation; either
+	version 3 of the License, or (at your option) any later version.
+-->
+<!--
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	General Public License for more details. You should have received a
+	copy of the GNU General Public License along with this program; If
+	not, see <http://www.gnu.org/licenses/>.
+-->
+<org.androhid.ButtonGridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/player"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_weight="1"
+>
+        <ImageButton android:id="@+id/one"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:soundEffectsEnabled="false"
+            android:scaleType="center"
+            android:src="@drawable/player_f1"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/two"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:src="@drawable/player_f2"
+            android:soundEffectsEnabled="false"
+            
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/three"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:src="@drawable/player_f3"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/four"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_start"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/five"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_stop"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/six"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_end"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/seven"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_rew"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/eight"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_play"
+            android:background="@drawable/player_button_bg"
+        />
+        
+        <ImageButton android:id="@+id/nine"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_fwd"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/ten"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_mute"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/eleven"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_volume_minus"
+            android:background="@drawable/player_button_bg"
+        />
+
+        <ImageButton android:id="@+id/twelve"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:scaleType="center"
+            android:soundEffectsEnabled="false"
+            android:src="@drawable/player_volume_plus"
+            android:background="@drawable/player_button_bg"
+        />
+</org.androhid.ButtonGridLayout>
