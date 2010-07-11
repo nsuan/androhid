@@ -23,10 +23,12 @@
 <string name="menu_button_info">Information</string>
 <string name="menu_button_search_device">Search Device</string>
 <string name="menu_button_settings">Preferences</string>
-<string name="connection_message">Connecting to HID Server...</string>
+<string name="connection_message">Connecting to HID server...</string>
+<string name="connection_failed">Could not establish connection to host</string>
+<string name="connection_established_to">Connected to</string>
 <string name="bt_device_search_list">Reachable Bluetooth Devices</string>
 <string name="no_devices">No devices found!</string>
-<string name="enable_bluetooth">This application needs Bluetooth.\nEnable it now?</string>
+<string name="enable_bluetooth">This application needs bluetooth.\nEnable it now?</string>
 <string name="yes">yes</string>
 <string name="no">no</string>
 <string name="option_menu_scan_devices_button">Search remote Devices</string>

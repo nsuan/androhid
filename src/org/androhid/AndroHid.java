@@ -282,8 +282,12 @@ public class AndroHid extends TabActivity {
 //		    		showToast("Error number minor -2");
 //					return;
 //				}
+		try {
 			btInterface.connectToHost(remoteHidDeviceAddress);
-			showToast("Connected to " + AndroHid.remoteHidDeviceAddress);
+		} catch (Exception connectionFailed){
+			showToast(getString(R.string.connection_failed));
+		}
+			showToast(getString(R.string.connection_established_to) + " " + AndroHid.remoteHidDeviceAddress);
 			//dialog.dismiss();
     }
     
