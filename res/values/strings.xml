@@ -29,11 +29,15 @@
 <string name="bt_device_search_list">Reachable Bluetooth Devices</string>
 <string name="no_devices">No devices found!</string>
 <string name="enable_bluetooth">This application needs bluetooth.\nEnable it now?</string>
-<string name="yes">yes</string>
-<string name="no">no</string>
+<string name="ok">OK</string>
+<string name="yes">Yes</string>
+<string name="no">No</string>
 <string name="option_menu_scan_devices_button">Search remote Devices</string>
 <string name="bluetooth_not_enabled">Bluetooth not enabled!</string>
 <string name="device_picker_title">AndroHid - Search Devices</string>
+<string name="no_root_permission_title">No root!</string>
+<string name="no_root_permission_dialog">This application requires root permission and 
+										 won\'t work without. Exiting now!</string>
 <string name="copyright_dialog_title">AndroHid</string>
 <string name="copyright_dialog">AndroHid is a free implementation of the bluetooth 
 								Human Interface Device specification.

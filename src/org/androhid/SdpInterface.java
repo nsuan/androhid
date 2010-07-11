@@ -21,6 +21,7 @@ package org.androhid;
 
 //import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import android.util.Log;
 
@@ -30,6 +31,25 @@ public class SdpInterface {
 	private String RELEASE_SDP_SERVICE  = "/system/bin/sdptool del 0x5efe5";
 	private int    processReturnValue;
 	
+	/* Check if rooted */
+    public boolean hasRootPermission() {
+    	boolean rooted = true;
+		try {
+			File su = new File("/system/bin/su");
+			if (su.exists() == false) {
+				su = new File("/system/xbin/su");
+				if (su.exists() == false) {
+					rooted = false;
+				}
+			}
+		} catch (Exception e) {
+			Log.d(AndroHid.TAG, "Can't obtain root - Here is what I know: "+e.getMessage());
+			rooted = false;
+		}
+		return rooted;
+    }
+	
+    /* Adding the HID service to sdp server */
 	public void addHidService(){
 		try {
 			Process process = Runtime.getRuntime().exec("su");
@@ -58,6 +78,7 @@ public class SdpInterface {
 			}
 	}
 	
+	/* Remove the HID service from sdp server */
 	public void delHidService(){
 		try {
 			Process process = Runtime.getRuntime().exec(RELEASE_SDP_SERVICE);

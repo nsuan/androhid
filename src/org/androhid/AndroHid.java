@@ -99,12 +99,18 @@ public class AndroHid extends TabActivity {
         }      
         
         // Check if BT is enabled
-        if ( !btInterface.isEnabled() ) {
+        if ( ! btInterface.isEnabled() ) {
         	showEnableBtDialog();
         }
         
+        // Check if su is available 
+        // If not, exit the application
+        if ( ! sdpInterface.hasRootPermission() ){
+        	showNoRootPermissionDialog();
+        }
+        
         // Add the KEYB Service to sdpd
-        // TODO: Wait until btInterface is really enabled! 
+        // TODO: Wait until btInterface is really enabled!
         sdpInterface.addHidService();
         
         // TODO: Can't listen on PSM 0x11 and 0x13 at the moment
@@ -147,14 +153,14 @@ public class AndroHid extends TabActivity {
     	currentTab = mTabHost.getCurrentTab();
     }
     
-    /**
+    /** 
     @Override
     protected void onDestroy(){
     	super.onDestroy();
     	btInterface.deconnectClient();
     	sdpInterface.delHidService();
     }
-    
+       
     @Override
      protected void onStart();
      
@@ -197,14 +203,14 @@ public class AndroHid extends TabActivity {
     /* Shows a dialog to enable bluetooth or quit the application */
     public void showEnableBtDialog(){
     	AlertDialog.Builder btEnableDialogBuilder = new AlertDialog.Builder(this);
-    	btEnableDialogBuilder.setMessage( R.string.enable_bluetooth )
+    	btEnableDialogBuilder.setMessage( getString( R.string.enable_bluetooth ) )
     	       .setCancelable(false)
-    	       .setPositiveButton( R.string.yes, new DialogInterface.OnClickListener() {
+    	       .setPositiveButton( getString( R.string.yes ), new DialogInterface.OnClickListener() {
     	           public void onClick( DialogInterface dialog, int id ) {
     	        	   startActivityForResult(new Intent( Settings.ACTION_BLUETOOTH_SETTINGS ),1);
     	           }
     	       })
-    	       .setNegativeButton( R.string.no, new DialogInterface.OnClickListener() {
+    	       .setNegativeButton( getString( R.string.no ), new DialogInterface.OnClickListener() {
     	           public void onClick(DialogInterface dialog, int id) {
     	        	   dialog.cancel();
     	        	   finish();
@@ -218,11 +224,26 @@ public class AndroHid extends TabActivity {
     public void showCopyrightDialog(){
     	AlertDialog.Builder copyrightDialogBuilder = new AlertDialog.Builder(this);
        	copyrightDialogBuilder
-			.setTitle( getString(R.string.copyright_dialog_title) )
-			.setMessage( getString(R.string.copyright_dialog) )
-			.setCancelable(true)
-			.setIcon(R.drawable.icon_small)
+			.setTitle( getString( R.string.copyright_dialog_title ) )
+			.setMessage( getString( R.string.copyright_dialog ) )
+			.setCancelable( true )
+			.setIcon( R.drawable.icon_small )
 			.show();
+    }
+    
+    /* Shows a dialog that superuser permissions are required and exits the app */
+    public void showNoRootPermissionDialog(){
+    	AlertDialog.Builder noRootPermissionDialogBuilder = new AlertDialog.Builder(this);
+    	noRootPermissionDialogBuilder.setMessage( getString( R.string.no_root_permission_dialog ) )
+    		.setTitle( getString( R.string.no_root_permission_title ) )
+    		.setIcon( android.R.drawable.ic_dialog_alert )
+    		.setCancelable( false )
+    	    .setPositiveButton( getString( R.string.ok ) , new DialogInterface.OnClickListener() {
+    	    	public void onClick( DialogInterface dialog, int id ) {
+    	    		finish(); 
+    	        	}
+    	     	})
+    	    .show();
     }
     
     /* Creates the menu items */
