@@ -96,9 +96,10 @@ public class BtDevicePicker extends ListActivity {
     	// Assign new host to pair with
     	AndroHid.remoteHidDeviceAddress = btDevices.get(position).btAddress;
     	// Save this host in Preferences
-    	AndroHid.myPreferences.edit().putString( "REMOTE_HID_DEVICE_ADDRESS", 
-    											AndroHid.remoteHidDeviceAddress );
-    	AndroHid.myPreferences.edit().commit();
+    	AndroHid.myPreferences
+    		.edit()
+    		.putString( "REMOTE_HID_DEVICE_ADDRESS", AndroHid.remoteHidDeviceAddress )
+    		.commit();
 		Toast.makeText(this.getApplicationContext(), "Selected Bluetooth Device: " +
 				btDevices.get( position ).humanReadableName,
 				Toast.LENGTH_LONG).show();
