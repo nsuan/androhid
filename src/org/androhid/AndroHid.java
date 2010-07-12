@@ -43,7 +43,7 @@ public class AndroHid extends TabActivity {
 	public final static String TAG = "AndroHid";
 	
 	//This is the bt mac address we associate to
-	public static String remoteHidDeviceAddress = "00:02:5B:00:C8:91";
+	public static String remoteHidDeviceAddress = "00:00:00:00:00:00";//"00:02:5B:00:C8:91";
 		
 	public static NativeBtHid  btInterface;
 	public static SdpInterface sdpInterface;
@@ -152,7 +152,14 @@ public class AndroHid extends TabActivity {
     	// Save current tab
     	currentTab = mTabHost.getCurrentTab();
     }
-    
+    protected void onStop(){
+    	super.onStop();
+    	// Save the bluetooth host address to preferences
+    	myPreferences
+    		.edit()
+    		.putString("REMOTE_HID_DEVICE_ADDRESS", remoteHidDeviceAddress)
+    		.commit();
+    }
     /** 
     @Override
     protected void onDestroy(){
@@ -166,7 +173,7 @@ public class AndroHid extends TabActivity {
      
      protected void onRestart();
 
-     protected void onStop();
+    
 
     */
     
@@ -287,22 +294,9 @@ public class AndroHid extends TabActivity {
     }
     
 	public void connect() {
-			//ProgressDialog dialog = ProgressDialog.show( this, "", "Connecting to HID Server..." );
-//			switch ( btInterface.setupClientSocket() ) 
-//				{
-//				case  0: 
-//					//showToast("Client setup successful");
-//					break;
-//				case -1:
-//					showToast( getString( R.string.bluetooth_not_enabled ) );
-//					return;
-//				case -2:
-//					showToast("Could not add sdp!");
-//					break;
-//				default:
-//		    		showToast("Error number minor -2");
-//					return;
-//				}
+		// Load preferred remote host btAddress
+        remoteHidDeviceAddress = AndroHid.myPreferences.getString( "REMOTE_HID_DEVICE_ADDRESS",
+        		remoteHidDeviceAddress );
 		try {
 			btInterface.connectToHost(remoteHidDeviceAddress);
 		} catch (Exception connectionFailed){
