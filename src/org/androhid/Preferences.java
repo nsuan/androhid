@@ -19,14 +19,56 @@
 
 package org.androhid;
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import java.util.Iterator;
+import java.util.Map;
 
-public class Preferences extends PreferenceActivity { 
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.EditTextPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.util.Log;
+
+public class Preferences extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener { 
 	@Override 
-	public void onCreate(Bundle savedInstanceState) { 
-    	super.onCreate(savedInstanceState); 
-   
-    	addPreferencesFromResource(R.layout.preferences); 
+	public void onCreate( Bundle savedInstanceState ) { 
+    	super.onCreate( savedInstanceState ); 
+       	addPreferencesFromResource( R.layout.preferences );
+    	// Register the AndroHid shared Preferences Manager
+    	AndroHid.myPreferences.registerOnSharedPreferenceChangeListener( this );
+	}
+
+	@Override
+	public void onDestroy()	{
+		super.onDestroy();
+		// Unregister the AndroHid shared Preferences Manager
+		AndroHid.myPreferences.unregisterOnSharedPreferenceChangeListener( this );
+	}
+	
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		updateSummaries();
+	   
+	    Log.d( AndroHid.TAG ,"PREFERENCE_CHANGED" );
+	}
+	
+	/* Sets for all EditTextPrefences the Entry as Summary */
+	private void updateSummaries(){
+		Map<String,?> allPreferenceEntries = AndroHid.myPreferences.getAll();
+	    Iterator<?> allPreferenceEntriesIterator = allPreferenceEntries.entrySet().iterator();
+	    while ( allPreferenceEntriesIterator.hasNext() ) {
+	        @SuppressWarnings( "rawtypes" )
+			Map.Entry pairs = ( Map.Entry ) allPreferenceEntriesIterator.next();
+	        
+	        Preference changedPreference = findPreference( ( CharSequence ) pairs.getKey() );
+
+	        if ( changedPreference instanceof EditTextPreference ) {
+	        	EditTextPreference editTextPreference = ( EditTextPreference ) changedPreference;
+	        	changedPreference.setSummary( editTextPreference.getText() );
+	        }
+	    }
 	}
 }
+
+

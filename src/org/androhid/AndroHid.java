@@ -43,7 +43,7 @@ public class AndroHid extends TabActivity {
 	public final static String TAG = "AndroHid";
 	
 	//This is the bt mac address we associate to
-	public static String remoteHidDeviceAddress = "00:00:00:00:00:00";//"00:02:5B:00:C8:91";
+	public static String remoteHidDeviceAddress = "00:00:00:00:00:00";
 		
 	public static NativeBtHid  btInterface;
 	public static SdpInterface sdpInterface;
