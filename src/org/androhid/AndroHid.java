@@ -73,7 +73,7 @@ public class AndroHid extends TabActivity {
         mTabHost = getTabHost();	// The activity TabHost
         mRes = getResources();		// Resource object to get Drawables
 
-        // Initiate static instances of wide used classes 
+        // Initiate static instances of widely used classes 
         btInterface    = new NativeBtHid();
         sdpInterface   = new SdpInterface();
         hidKeyMapper   = new HidKeyMapper();
@@ -294,15 +294,20 @@ public class AndroHid extends TabActivity {
     }
     
 	public void connect() {
+		int connectionStatus = 0;
 		// Load preferred remote host btAddress
         remoteHidDeviceAddress = AndroHid.myPreferences.getString( "REMOTE_HID_DEVICE_ADDRESS",
         		remoteHidDeviceAddress );
 		try {
-			btInterface.connectToHost(remoteHidDeviceAddress);
+			connectionStatus = btInterface.connectToHost(remoteHidDeviceAddress);
 		} catch (Exception connectionFailed){
 			showToast(getString(R.string.connection_failed));
 		}
+		if ( connectionStatus == 0 ) {
 			showToast(getString(R.string.connection_established_to) + " " + AndroHid.remoteHidDeviceAddress);
+		} else {
+			showToast(getString(R.string.connection_failed));
+		}
 			//dialog.dismiss();
     }
     

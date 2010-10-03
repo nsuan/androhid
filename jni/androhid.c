@@ -53,14 +53,17 @@ JNIEXPORT jint JNICALL Java_org_androhid_NativeBtHid_setupClientSocket
 JNIEXPORT jint JNICALL Java_org_androhid_NativeBtHid_connectToHost
   (JNIEnv *env , jobject obj, jstring BtAddress) {
     const char *buffer = (*env)->GetStringUTFChars(env, BtAddress, 0);
+    int returnValue = 0;
 	//Getting local bluetooth address
 	char localBtAddress[64] = { 0 };
 	bdaddr_t loc_addr = *BDADDR_ANY;
 	ba2str( &loc_addr, localBtAddress);
+
 	//Connecting to HID host
-    reconnect( localBtAddress , buffer );
+    returnValue = reconnect( localBtAddress , buffer );
     
 	(*env)->ReleaseStringUTFChars(env, BtAddress, buffer);
+	return returnValue;
   }
 
 /*

@@ -30,14 +30,15 @@ public class NativeBtHid {
    * should be called on construction 
    * Takes as argument the bluetooth Address of the host
    * 
-   * @return	0 if successfull 
+   * @return	0 if successful 
    */
   public native int setupClientSocket();
   
   /**
    * Connect to the host
    * 
-   * @return	0 if successfull
+   * @return	0 if successful
+   * @return	1 if not successful 
    */
   public native int connectToHost( String hostAddress );
   
@@ -45,14 +46,14 @@ public class NativeBtHid {
    * Deinitialize the HID client and disconnects
    * Should be called on destruction
    * 
-   * @return	0 if successfull
+   * @return	0 if successful
    */
   public native int deconnectClient();
   
   /**
    * Send a key press event
    * 
-   * @return	0 if successfull
+   * @return	0 if successful
    * @param	modifiers	the modifier HID code
    * @param keyValue	the key value HID code 
    */
@@ -61,14 +62,14 @@ public class NativeBtHid {
   /**
    * Send a key release event
    * 
-   * @return: 0 if successfull
+   * @return: 0 if successful
    */
   public native int sendKeyUpEvent();
   
   /**
    * Send a mouse event
    * 
-   * @returns: 0 if successfull
+   * @returns: 0 if successful
    */
   public native int sendMouseEvent( int button, int movX, int movY, int whell );
   

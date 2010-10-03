@@ -176,21 +176,21 @@ int reconnect(char *src, char *dst)
 	csk = l2cap_connect(&srcaddr, &dstaddr, L2CAP_PSM_HIDP_CTRL);
 	if (csk < 0) {
 		perror("Can't create HID control channel");
-		return 0;
+		return 1;
 	}
 
 	isk = l2cap_connect(&srcaddr, &dstaddr, L2CAP_PSM_HIDP_INTR);
 	if (isk < 0) {
 		perror("Can't create HID interrupt channel");
 		close(csk);
-		return 0;
+		return 1;
 	}
 
 	ctrl = csk;
 	intr = isk;
 		
 	connection_status = 1;
-	return 1;
+	return 0;
 }
 
 int send_key_down(int modifiers, int val)
