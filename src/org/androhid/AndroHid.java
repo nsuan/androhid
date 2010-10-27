@@ -115,7 +115,7 @@ public class AndroHid extends TabActivity {
         
         // TODO: Can't listen on PSM 0x11 and 0x13 at the moment
         // 		 so the HID standard is not implemented completely at the moment
-        //btInterface.setupClientSocket();
+        btInterface.setupClientSocket();
     }
     
     @Override

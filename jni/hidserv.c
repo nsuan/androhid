@@ -216,8 +216,7 @@ int send_key_down(int modifiers, int val)
 
 int send_key_up()
 {
-
-        unsigned char th[10];
+    unsigned char th[10];
 	int n;
 	
 	th[0] = 0xa1;
@@ -238,8 +237,7 @@ int send_key_up()
 
 int send_mouse_event(int btn, int mov_x, int mov_y, int whell)
 {
-
-		unsigned char th[6];
+	unsigned char th[6];
 	int n;
 	
 	th[0] = 0xa1;
@@ -252,11 +250,6 @@ int send_mouse_event(int btn, int mov_x, int mov_y, int whell)
 
 	n = write(intr, th, sizeof(th));
 	return n;
-	/*th[2] = 0x00; 
-	th[3] = 0x00;
-	th[4] = 0x00; 
-	th[5] = 0x00;
-	write(is, th, sizeof(th));*/
 }
 
 void* open_sock()
@@ -281,7 +274,6 @@ void* open_sock()
 	intr = l2cap_accept(isg, NULL);	
 
 	connection_status = 1;
-
 }
 
 void init_server()
